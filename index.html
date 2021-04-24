@@ -12,22 +12,18 @@
 </head>
 
 <body>
-    <nav>
-        <div id="mainLogo">
-            <img src="img/logo.svg" alt="Your Shoe Logo">
-        </div>
-        <div class="right">
+    <nav class="navFade">
+        <div class="right contentFade">
             <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="shoes.html">Shoes</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Shoes</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </div>
     </nav>
     <div id="distort">
-        <div id="mask"><img src="img/mask.svg" alt="Mask Shape"></div>
-        <div id="shoe" class="bounceIn"><img src="img/shoe.png" class="shadowed" alt="Running Shoes from a popular brand"></div>
-
+        <div id="mask"><img src="img/mask2.svg" alt="Mask Shape"></div>
+        <div id="shoe" class="bounceIn"><img src="img/nike.png" class="shadowed" alt="Running Shoes from a popular brand"></div>
 
         <div id="intro" class="fadeInLeftBig">
             <h1>Nike<br>LunaCharge</h1></div>
@@ -45,7 +41,7 @@
             </feMerge>
         </filter>
     </svg>
-    <div class="grid">
+    <div class="grid contentFade" id="content">
         <div class="col3 md3">
             <h3>Product Details</h3>
             <p><strong> Color:</strong> Black
@@ -59,11 +55,11 @@
             <p>Shared value capacity building radical activate youth revolutionary, NGO rubric collaborative cities. Radical targeted changemaker rubric mobilize. Resilient, inspiring expose the truth natural resources agile.</p>
         </div>
         <div class="col3 md3">
-            <img src="img/fabric.jpg" alt="Unique Fabric Materials used in the shoe build" class="rsp">
+            <img src="img/bg.jpg" width="100%">
         </div>
     </div>
-    <footer>
-        <p>&copy; 2019 Web Designer Magazine
+    <footer class="contentFade">
+        <p>&copy; Web Designer Magazine
             <br> Richmond Hill
             <br> Bournemouth
             <br> Dorset
@@ -90,7 +86,7 @@
             y: window.innerHeight
         };
 
-        const bg = new PIXI.Sprite.from('img/bg.jpg'); //img/bg.jpg
+        const bg = new PIXI.Sprite.from('img/bg-2.jpg'); //img/bg.jpg
         container.addChild(bg);
         bg.x = -10;
         bg.y = -10;
@@ -110,8 +106,8 @@
 
         bg.filters = [displacementFilter];
 
-        displacementFilter.scale.x = 120; //500 looks cool
-        displacementFilter.scale.y = 120; //500 looks cool
+        displacementFilter.scale.x = 120; //500 looks cool, standard:120
+        displacementFilter.scale.y = 120; //500 looks cool, standard:120
 
         app.ticker.add(() => {
             displacementSprite.y += 1;

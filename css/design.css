@@ -1,6 +1,7 @@
 html,
 body {
   width: 100%;
+  max-width: 100%;
   min-height: 100%;
   margin: 0;
   padding: 0;
@@ -13,12 +14,16 @@ body {
 }
 nav {
   position: fixed;
+  right: 0%;
+  top: 0%;
   z-index: 2000;
-  height: 90px;
-  width: 100%;
-  padding: 10px 20px;
-  text-shadow: 2px 6px 6px rgba(0, 0, 0, 0.4);
-  background: rgba(92, 147, 237, 0.1);
+  /*transform: rotate(25deg);*/
+  padding: 1.2rem;
+  padding-right: 4rem;
+  padding-left: 2rem;
+  /*background-color: rgba(116, 116, 116, 0.541);*/
+  /*text-shadow: 2px 6px 6px rgba(0, 0, 0, 0.4);*/
+  /*background: rgba(92, 147, 237, 0.1);*/
 }
 #mainLogo {
   padding-top: 5px;
@@ -27,6 +32,9 @@ nav {
 }
 #mainLogo img {
   max-width: 100px;
+}
+#content {
+  margin-top: 5rem;
 }
 .right {
   float: right;
@@ -43,18 +51,20 @@ nav li {
 a {
   text-decoration: none;
   padding: 10px 0;
-  color: #fff;
+  color: rgb(255, 255, 90);
+  color: rgb(65, 65, 65);
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 1.2em;
   width: 80px;
-  border-bottom: 2px solid #fff;
+  /*border-bottom: 2px solid #fff;*/
   transition: 0.5s all;
   text-transform: uppercase;
   font-family: "Signika", sans-serif;
+  font-weight: 500;
 }
 a:hover {
-  color: #fff;
-  background: rgba(25, 40, 44, 0.61);
+  color: rgb(0, 0, 0);
+  /*background: rgba(25, 40, 44, 0.61);*/
 }
 canvas {
   width: 100vw;
@@ -86,20 +96,32 @@ canvas {
   width: 100%;
   max-width: 1000px;
   object-fit: cover;
+  transform: rotate(-15deg);
+  transition: transform 1s ease;
+}
+#shoe img:hover {
+  transform: rotate(-25deg);
+  transition: transform 1s ease;
 }
 #intro {
   position: absolute;
-  width: 70%;
-  padding: 50px;
+  width: 80%;
+  padding: 1rem;
   z-index: 22;
-  top: 20%;
+  top: 40%;
   left: 0;
   color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 #intro h1 {
-  font-size: 7vw;
-  line-height: 0.8em;
-  text-shadow: 2px 12px 12px rgba(0, 0, 0, 0.4);
+  font-size: 8rem;
+  line-height: 0.9em;
+
+  text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.137);
+  transform: rotate(90deg);
+  color: rgb(255, 255, 90);
 }
 #shad {
   display: none;
@@ -118,11 +140,7 @@ canvas {
   color: #fff;
   border-radius: 3px;
   background: rgb(96, 117, 250);
-  background: linear-gradient(
-    90deg,
-    rgba(96, 117, 250, 1) 0%,
-    rgba(92, 72, 210, 1) 100%
-  );
+  background: linear-gradient(90deg, rgb(37, 37, 37) 0%, rgb(19, 19, 19) 100%);
 }
 .rsp {
   padding-top: 30px;
@@ -130,11 +148,7 @@ canvas {
 }
 footer {
   background: rgb(96, 117, 250);
-  background: linear-gradient(
-    90deg,
-    rgba(96, 117, 250, 1) 0%,
-    rgba(92, 72, 210, 1) 100%
-  );
+  background: linear-gradient(90deg, rgb(53, 53, 53) 0%, rgb(15, 15, 15) 100%);
   min-height: 200px;
   color: #fff;
   text-align: center;
@@ -255,15 +269,15 @@ footer {
   0% {
     opacity: 0;
     -webkit-transform: scale3d(0.3, 0.3, 0.3);
-    transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3) rotate(-50deg);
   }
   20% {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
-    transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1) rotate(-40deg);
   }
   40% {
     -webkit-transform: scale3d(0.9, 0.9, 0.9);
-    transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9) rotate(-30deg);
   }
   60% {
     opacity: 1;
@@ -285,4 +299,33 @@ footer {
   animation-duration: 1.5s;
   -webkit-animation-name: bounceIn;
   animation-name: bounceIn;
+}
+
+.contentFade {
+  animation: cfade 1.25s ease;
+}
+@keyframes cfade {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.navFade {
+  animation: navfade 1.25s ease;
+}
+
+@keyframes navfade {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
 }
